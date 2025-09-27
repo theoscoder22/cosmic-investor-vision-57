@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Kris Ruby inspired elegant color palette */
+    --background: 45 29% 97%;
+    --foreground: 20 14% 16%;
+
+    --card: 45 29% 97%;
+    --card-foreground: 20 14% 16%;
+
+    --popover: 45 29% 97%;
+    --popover-foreground: 20 14% 16%;
+
+    /* Sophisticated neutral palette */
+    --primary: 20 14% 16%;
+    --primary-foreground: 45 29% 97%;
+
+    --secondary: 35 12% 89%;
+    --secondary-foreground: 20 14% 16%;
+
+    --muted: 40 10% 92%;
+    --muted-foreground: 25 10% 45%;
+
+    --accent: 35 25% 85%;
+    --accent-foreground: 20 14% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 29% 97%;
+
+    --border: 35 12% 89%;
+    --input: 35 12% 89%;
+    --ring: 20 14% 16%;
+
+    --radius: 0.375rem;
+
+    /* Elegant hero section */
+    --hero-bg: 45 25% 96%;
+    --hero-text: 25 15% 25%;
+    --hero-accent: 35 20% 75%;
+
+    /* Sophisticated navigation */
+    --nav-bg: 45 29% 97%;
+    --nav-text: 20 14% 16%;
+    --nav-hover: 35 15% 85%;
+
+    /* Professional content areas */
+    --content-bg: 0 0% 100%;
+    --content-accent: 35 20% 92%;
+
+    --sidebar-background: 45 25% 96%;
+    --sidebar-foreground: 20 14% 16%;
+    --sidebar-primary: 20 14% 16%;
+    --sidebar-primary-foreground: 45 29% 97%;
+    --sidebar-accent: 35 12% 89%;
+    --sidebar-accent-foreground: 20 14% 16%;
+    --sidebar-border: 35 12% 89%;
+    --sidebar-ring: 35 20% 75%;
+  }
+
+  .dark {
+    /* Dark mode with elegant sophistication */
+    --background: 20 14% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 20 14% 8%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 20 14% 8%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 45 25% 95%;
+    --primary-foreground: 20 14% 8%;
+
+    --secondary: 25 10% 15%;
+    --secondary-foreground: 45 25% 95%;
+
+    --muted: 25 10% 15%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 25 15% 20%;
+    --accent-foreground: 45 25% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 45 25% 95%;
+
+    --border: 25 10% 15%;
+    --input: 25 10% 15%;
+    --ring: 35 20% 75%;
+
+    --hero-bg: 20 14% 10%;
+    --hero-text: 45 25% 90%;
+    --hero-accent: 35 15% 25%;
+
+    --nav-bg: 20 14% 8%;
+    --nav-text: 45 25% 95%;
+    --nav-hover: 25 10% 20%;
+
+    --content-bg: 20 14% 6%;
+    --content-accent: 25 10% 12%;
+
+    --sidebar-background: 20 14% 10%;
+    --sidebar-foreground: 45 25% 95%;
+    --sidebar-primary: 35 20% 75%;
+    --sidebar-primary-foreground: 20 14% 8%;
+    --sidebar-accent: 25 10% 15%;
+    --sidebar-accent-foreground: 45 25% 95%;
+    --sidebar-border: 25 10% 15%;
+    --sidebar-ring: 35 20% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Playfair_Display',serif];
+  }
+
+  /* Elegant typography */
+  .elegant-heading {
+    @apply font-light tracking-wide;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .professional-text {
+    @apply leading-relaxed;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Hero section styling */
+  .hero-container {
+    background: linear-gradient(135deg, hsl(var(--hero-bg)) 0%, hsl(var(--content-accent)) 100%);
+  }
+
+  /* Navigation styling */
+  .nav-elegant {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .nav-elegant:hover {
+    @apply scale-105;
+    color: hsl(var(--hero-accent));
+  }
+
+  /* Professional card styling */
+  .professional-card {
+    @apply rounded-lg border border-border bg-card/50 backdrop-blur-sm;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .professional-card:hover {
+    @apply shadow-lg scale-105;
+    border-color: hsl(var(--hero-accent));
+  }
+
+  /* Elegant animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
